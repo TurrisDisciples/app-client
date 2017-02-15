@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/perfil"
+            android:icon="@mipmap/ic_account_circle_black_24dp"
+            android:title="Perfil" />
+        <item
+            android:id="@+id/nuevoEnvio"
+            android:icon="@mipmap/ic_add_black_24dp"
+            android:title="Nuevo Envio" />
+        <item
+            android:id="@+id/solicitarViaje"
+            android:icon="@mipmap/ic_perm_device_information_black_24dp"
+            android:title="Solicitar Viaje" />
+        <item
+            android:id="@+id/sign_out"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Cerrar sesión" />
+    </group>
+
+    <item android:title="Comunicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Compartir" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Enviar" />
+        </menu>
+    </item>
+
+</menu>

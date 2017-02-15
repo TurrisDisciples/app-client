@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">"ArgenTruck-client "</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Dirección de correo</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Ingresar o registrarse</string>
+    <string name="action_sign_in_short">Ingresar</string>
+    <string name="error_invalid_email">La dirección de correo no es válida</string>
+    <string name="error_invalid_password">La contraseña es muy corta</string>
+    <string name="error_incorrect_password">La contraseña es incorrecta</string>
+    <string name="error_field_required">Este campo es obligatorio</string>
+    <string name="permission_rationale">"Permiso para acceder a los contactos es necesario para autocompletar correos"
+    </string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="tus_viajes">Tus viajes</string>
+    <string name="clientes">Clientes</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="get_ip">Get your IP</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="origen">Origen: </string>
+    <string name="destino">Destino: </string>
+
+    <string name="buscar_viaje"> Buscar viaje </string>
+    <string name="confirmar_viaje"> Confirmar Viaje </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
