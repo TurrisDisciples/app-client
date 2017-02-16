@@ -40,14 +40,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, NewTripActivity.class);
-                startActivity(intent);
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -107,11 +99,15 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.perfil) {
             // Handle the camera action
+        } else if(id == R.id.solicitarViaje){
+            Intent intent = new Intent(MainActivity.this, RequestTravel.class);
+            startActivity(intent);
         } else if (id == R.id.nuevoEnvio) {
             Intent intent = new Intent(MainActivity.this, BuscarViajeActivity.class);
             startActivity(intent);
         } else if (id == R.id.sign_out) {
-
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
@@ -136,10 +132,33 @@ public class MainActivity extends AppCompatActivity
                 String origin = cJson.getString("origin");
                 String destiny = cJson.getString("destiny");
                 String date = cJson.getString("date");
-                //TODO: Arreglar esta wea
-                Viaje v = new Viaje(date, origin, destiny, 10, 20);
-                v.setEspacioPedido(5);
+                int capMax = cJson.getInt("capMax");
+                int currentCap = cJson.getInt("capCurrent");
+                int capReservada = 0;
+                int cantidadViajantes = cJson.getInt("__v");;
+                //Buscamos mi viaje
+                String emailBuscado = Singletonazo.getInstance().getEmail();
+                boolean encontro = false;
+                JSONArray registerList = cJson.getJSONArray("registers");
+
+                for(int j = 0;j < registerList.length(); j++){
+
+                    JSONObject registradoActual = registerList.getJSONObject(j);
+                    JSONObject travelData = registradoActual.getJSONObject("userId");
+                    String email = travelData.getString("email");
+
+                    encontro = email.compareTo(emailBuscado) == 0;
+
+                    if(encontro){
+                        capReservada = registradoActual.getInt("capacity");
+                    }
+
+                }
+
+                Viaje v = new Viaje(date, origin, destiny, currentCap, capMax);
+                v.setEspacioPedido(capReservada);
                 v.setFecha(date);
+                v.setCantidadViajantes(cantidadViajantes);
                 cList.add(v);
             }
 

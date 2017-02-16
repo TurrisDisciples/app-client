@@ -4,7 +4,7 @@
     <!-- Strings related to login -->
     <string name="prompt_email">Dirección de correo</string>
     <string name="prompt_password">Contraseña</string>
-    <string name="action_sign_in">Ingresar o registrarse</string>
+    <string name="action_sign_in">Ingresar</string>
     <string name="action_sign_in_short">Ingresar</string>
     <string name="error_invalid_email">La dirección de correo no es válida</string>
     <string name="error_invalid_password">La contraseña es muy corta</string>
@@ -30,4 +30,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="prompt_name">Nombre</string>
+    <string name="prompt_surname">Apellido</string>
+    <string name="prompt_direccion">Direccion</string>
+    <string name="prompt_cbu">CBU</string>
+    <string name="prompt_telephone">Telefono</string>
+    <string name="action_register">Crear Cuenta</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="crear_viaje">Crear nuevo viaje</string>
+    <string name="capacidad_maxima">Capacidad Maxima:</string>
+    <string name="fecha_viaje">Fecha (aaaa-mm-dd):</string>
+    <string name="http_ip">http://192.168.1.106:3000</string>
+
 </resources>

@@ -36,7 +36,7 @@ public class ElegirViajeListAdapter extends ArrayAdapter<Viaje> {
             travelDate.setText("Fecha: " + viajeActual.getFecha());
 
             TextView travelCarga = (TextView) customView.findViewById(R.id.ftsi_tv_carga);
-            travelCarga.setText("Carga: " + viajeActual.getEspacioLibre());
+            travelCarga.setText("Carga disponible: " + viajeActual.getEspacioLibre());
 
             return customView;
         }

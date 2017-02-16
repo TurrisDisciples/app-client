@@ -14,6 +14,7 @@ public class Viaje {
     private Integer espacioLibre;
     private Integer espacioPedido;
     private String conductor;
+    private int cantidadViajantes;
 
     public Viaje(String fecha, String origen, String destino, Integer espacioTotal, Integer espacioLibre) {
         this.fecha = fecha;
@@ -72,7 +73,7 @@ public class Viaje {
     }
 
     public Integer getEspacioLibre() {
-        return espacioLibre;
+        return espacioTotal - espacioLibre;
     }
 
     public void setEspacioLibre(Integer espacioLibre) {
@@ -93,5 +94,13 @@ public class Viaje {
 
     public void setConductor(String conductor) {
         this.conductor = conductor;
+    }
+
+    public int getCantidadViajantes() {
+        return cantidadViajantes;
+    }
+
+    public void setCantidadViajantes(int cantidadViajantes) {
+        this.cantidadViajantes = cantidadViajantes;
     }
 }

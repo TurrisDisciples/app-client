@@ -21,38 +21,89 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/desde"
-                />
+                android:text="Conductor: a@a.a"
+                android:id="@+id/conductor"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_gravity="center_horizontal" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@drawable/lead_photo_7"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Desde: Cordoba"
+                android:id="@+id/desde"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hasta: La pampa"
                 android:id="@+id/hasta"
-                />
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/conductor"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:text="Fecha: 22/6"
                 android:id="@+id/fecha"
-                />
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cargaDisponible"
-                />
+                android:text="Carga disponible: 150"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Aca elegimos cuanta carga queremos"
-                android:id="@+id/cargaDeseada"
-                />
+                android:id="@+id/cargaTotal"
+                android:text="Carga Total: 300"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contratos"
+                android:text="Cantidad de contratos: 5"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/capaCont"
+                    android:hint="Capacidad a contratar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeActionId="@+id/login"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
 
             <Button
                 android:id="@+id/buscar_viaje_button"

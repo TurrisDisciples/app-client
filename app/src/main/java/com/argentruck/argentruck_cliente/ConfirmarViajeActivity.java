@@ -20,7 +20,10 @@ public class ConfirmarViajeActivity extends AppCompatActivity implements HttpRes
     private TextView conductor;
     private TextView fecha;
     private TextView cargaDisponible;
-    private TextView cargaDeseada;
+    private TextView cargaTotal;
+    private TextView contratistas;
+
+    private EditText capContr;
 
     private String viajeId;
 
@@ -42,8 +45,12 @@ public class ConfirmarViajeActivity extends AppCompatActivity implements HttpRes
         fecha = (TextView) findViewById(R.id.fecha);
         fecha.setText("Fecha: " + viaje.getFecha());
         cargaDisponible = (TextView) findViewById(R.id.cargaDisponible);
-        cargaDisponible.setText("Espacio libre :" + viaje.getEspacioLibre());
-        cargaDeseada = (TextView) findViewById(R.id.cargaDeseada);
+        cargaDisponible.setText("Capacidad libre: " + viaje.getEspacioLibre());
+        cargaTotal = (TextView) findViewById(R.id.cargaTotal);
+        cargaTotal.setText("Capacidad total: " + viaje.getEspacioTotal());
+        contratistas = (TextView) findViewById(R.id.contratos);
+        contratistas.setText("Contratos: " + viaje.getCantidadViajantes());
+        capContr = (EditText) findViewById(R.id.capaCont);
 
         //Viaje viajeVista = (Viaje) findViewById(R.id.viajeVista);
     }
@@ -53,7 +60,8 @@ public class ConfirmarViajeActivity extends AppCompatActivity implements HttpRes
             JSONObject data = new JSONObject();
             data.put("id", viajeId);
             data.put("email", Singletonazo.getInstance().getEmail());
-            data.put("capacity", 10);
+            int cap = Integer.parseInt(capContr.getText().toString());
+            data.put("capacity", cap);
 
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("data", data);

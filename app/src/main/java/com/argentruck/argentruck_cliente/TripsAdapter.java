@@ -52,7 +52,10 @@ public class TripsAdapter extends ArrayAdapter<Viaje> {
 
         holder.inicial.setBackgroundResource(R.drawable.truck_waiting);
         holder.viaje.setText(viaje.getOrigen() + " a " + viaje.getDestino());
-        holder.capacidad.setText("Reservado " + viaje.getEspacioPedido() + "p");
+        if (viaje.getEspacioPedido() > 1)
+            holder.capacidad.setText("Reservado " + viaje.getEspacioPedido() + " pallets");
+        else
+            holder.capacidad.setText("Reservado " + viaje.getEspacioPedido() + " pallet");
         holder.fecha.setText(viaje.getFecha());
 
         return convertView;

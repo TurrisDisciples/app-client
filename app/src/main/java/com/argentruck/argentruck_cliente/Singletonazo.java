@@ -5,8 +5,10 @@ import com.argentruck.argentruck_cliente.entidades.Viaje;
 
 public class Singletonazo {
     private String email;
-    private String ip = "http://192.168.1.16";
+    private String ip = "http://192.168.1.106";
     private Viaje currentShowViaje;
+
+
 
     private static Singletonazo ourInstance = new Singletonazo();
 

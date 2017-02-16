@@ -22,6 +22,10 @@ public class ElegirViajeActivity  extends AppCompatActivity implements HttpRespo
 
     ElegirViajeListAdapter evla;
 
+    String origen;
+    String destino;
+    int capacidad;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +40,13 @@ public class ElegirViajeActivity  extends AppCompatActivity implements HttpRespo
         String uri = Singletonazo.getInstance().getIp() + ":3000/users/travels";
         httpGetConnection.setUri(uri);
         httpGetConnection.execute();
-    }
+        Intent i = getIntent();
+
+        origen = i.getStringExtra("origen");
+        destino = i.getStringExtra("destino");
+        capacidad = i.getIntExtra("cap", 0);
+
+     }
 
     public void confirmarViaje(View view) {
         //Guardar viaje en singleton.
@@ -57,13 +67,25 @@ public class ElegirViajeActivity  extends AppCompatActivity implements HttpRespo
                 String id = cJson.getString("_id");
                 int capMax = cJson.getInt("capMax");
                 int capCurrent = cJson.getInt("capCurrent");
+                int registrados = cJson.getInt("__v");
                 String conductor = cJson.getString("email");
                 Viaje v = new Viaje(fecha, origen, destino, capMax, capCurrent);
+                v.setCantidadViajantes(registrados);
                 v.setId(id);
                 v.setConductor(conductor);
-                vList.add(v);
+
+                boolean validado = false;
+
+                validado = (origen.compareTo(this.origen) == 0);
+                validado = validado && (destino.compareTo(this.destino) == 0);
+                validado = validado && (v.getEspacioLibre() >= this.capacidad);
+
+                if(validado) {
+                    vList.add(v);
+                }
             }
 
+            evla.clear();
             evla.addAll(vList);
 
         } catch (JSONException e) {
